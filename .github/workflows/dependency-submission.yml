@@ -1,0 +1,23 @@
+# .github/workflows/dependency-submission.yml
+name: Dependency submission
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/bun.lock'
+      # Editing this workflow, such as its inputs or the action version, changes
+      # what gets submitted too.
+      - .github/workflows/dependency-submission.yml
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: charpeni/bun-lock-submission@v1
