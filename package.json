@@ -1,0 +1,7 @@
+{
+  "name": "bun-dependabot-gap-demo",
+  "private": true,
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
